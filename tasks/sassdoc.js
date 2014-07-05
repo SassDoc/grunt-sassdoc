@@ -33,10 +33,8 @@ module.exports = function (grunt) {
 
     var options = this.options({
       title: title,
-      display: {
-        private: true,
-        alias: true
-      }
+      display_access: ['public', 'private'],
+      display_alias: false
     });
 
     this.files.forEach(function (filePair) {

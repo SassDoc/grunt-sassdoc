@@ -14,9 +14,10 @@ module.exports = function (grunt) {
       test: {
         src: 'test/sass',
         dest: 'test/docs',
-        display: {
-          private: true,
-          alias: true
+        options: {
+          title: 'grunt-sassdoc test',
+          display_access: ['public', 'private'],
+          display_alias: false
         }
       }
     },

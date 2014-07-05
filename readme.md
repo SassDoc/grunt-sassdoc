@@ -36,15 +36,15 @@ See the [Gruntfile](Gruntfile.js) in this repo for a full example.
 grunt.initConfig({
   sassdoc: {
     default: {
-      src: 'test/sass',
-      dest: 'test/docs',
-      display: {
+      src: 'sass',
+      dest: 'docs',
+      options: {
         title: 'My cool project'
-        private: true,
-        alias: true
+        display_access: ['public', 'private'],
+        display_alias: false
       }
     }
-  }
+  },
 });
 
 grunt.loadNpmTasks('grunt-sassdoc');
