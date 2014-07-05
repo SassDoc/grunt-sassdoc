@@ -1,0 +1,49 @@
+{
+  "name": "grunt-sassdoc",
+  "title": "grunt-sassdoc",
+  "version": "0.1.0",
+  "description": "SassDoc grunt task",
+  "keywords": [
+    "gruntplugin",
+    "grunt",
+    "sass",
+    "scss",
+    "doc",
+    "documentation"
+  ],
+  "homepage": "https://github.com/pascalduez/grunt-sassdoc",
+  "bugs": "https://github.com/pascalduez/grunt-sassdoc/issues",
+  "author": {
+    "name": "Pascal Duez",
+    "url": "http://pascalduez.me"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/pascalduez/grunt-sassdoc.git"
+  },
+  "dependencies": {
+    "sassdoc": "^1.0.0",
+    "chalk": "^0.5.0"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-clean": "^0.5.0",
+    "grunt-eslint": "^0.5.0",
+    "grunt-simple-mocha": "^0.4.0",
+    "load-grunt-tasks": "^0.6.0",
+    "time-grunt": "^0.3.2"
+  },
+  "peerDependencies": {
+    "grunt": "^0.4.5"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "license": {
+    "type": "unlicence",
+    "url": "http://unlicense.org"
+  },
+  "scripts": {
+    "test": "grunt test"
+  }
+}

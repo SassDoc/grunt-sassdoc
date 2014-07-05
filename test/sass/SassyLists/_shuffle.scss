@@ -1,0 +1,33 @@
+ /**
+ * Shuffle `$list` using Fisher-Yates method
+ * ---
+ * @since 0.4.9
+ * ---
+ * @ignore Documentation: http://sassylists.com/documentation/#shuffle
+ * ---
+ * @param {List} $list - list to shuffle
+ * ---
+ * @returns {List}
+ */
+@function shuffle($list) {
+  $length: length($list);
+
+  @if $length < 2 {
+    @return $list;
+  }
+
+  @for $i from $length through 1 {
+    $j: random($length - 1) + 1;
+    $tmp: nth($list, $i);
+    $list: set-nth($list, $i, nth($list, $j));
+    $list: set-nth($list, $j, $tmp);
+  }
+  @return $list;
+}
+
+/**
+ * @alias shuffle
+ */
+@function randomize($list) {
+  @return shuffle($list);
+}

@@ -1,0 +1,35 @@
+/**
+ * Returns first element of `$list`
+ * ---
+ * @ignore Documentation: http://sassylists.com/documentation/#first
+ * ---
+ * @param {List} $list - list to retrieve first item from
+ * ---
+ * @throws Cannot find first item of empty list.
+ * ---
+ * @example
+ * $list: (1, 2, 3, 4);
+ * $first: first($list);
+ * // -> 1
+ * ---
+ * @example
+ * $list: 1;
+ * $first: first($list);
+ * // -> 1
+ * ---
+ * @returns {*}
+ */
+@function first($list) {
+  @if length($list) == 0 {
+    @warn "Cannot find first item of empty list.";
+    @return false;
+  }
+
+  @return nth($list, 1);
+}
+
+// @alias first
+
+@function head($list) {
+  @return first($list);
+}
