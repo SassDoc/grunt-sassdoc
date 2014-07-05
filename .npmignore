@@ -1,6 +1,7 @@
 .npmignore
 .editorconfig
 .gitattributes
+.travis.yml
 conf
 test
 Gruntfile.js

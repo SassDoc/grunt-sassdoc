@@ -1,4 +1,4 @@
-# grunt-sassdoc [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
+# grunt-sassdoc [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/) [![Build Status: Linux](https://travis-ci.org/pascalduez/grunt-sassdoc.png?branch=master)](https://travis-ci.org/pascalduez/grunt-sassdoc)
 
 > [SassDoc](https://github.com/HugoGiraudel/SassDoc) grunt task.
 
