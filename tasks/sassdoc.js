@@ -10,6 +10,7 @@ module.exports = function (grunt) {
 
   var sassdoc = require('sassdoc');
   var chalk = require('chalk');
+  var _ = require('lodash');
 
   var validateSrc = function (filePair) {
     return filePair.src.filter(function (filepath) {
@@ -23,6 +24,16 @@ module.exports = function (grunt) {
     });
   };
 
+  var loadConfig = function (path) {
+    if (!grunt.file.exists(path)) {
+      grunt.log.warn('Config file "' + chalk.cyan(path) + '" not found.');
+      return false;
+    }
+    else {
+      return grunt.file.readJSON(path);
+    }
+  };
+
   grunt.registerMultiTask('sassdoc', 'Generates documentation', function () {
     var done = this.async();
 
@@ -32,10 +43,23 @@ module.exports = function (grunt) {
     var title = pkg ? pkg.title || pkg.name : 'SassDoc';
 
     var options = this.options({
+      config: null,
       title: title,
       display_access: ['public', 'private'],
       display_alias: false
     });
+
+
+    // If a config file is passed and found,
+    // its options will prevail over defauts.
+    if (options.config) {
+      var config = loadConfig(options.config);
+
+      if (config) {
+        options = _.assign(options, config);
+        options = _.omit(options, 'config');
+      }
+    }
 
     this.files.forEach(function (filePair) {
       var src = validateSrc(filePair);

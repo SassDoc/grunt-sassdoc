@@ -12,12 +12,14 @@ module.exports = function (grunt) {
 
     sassdoc: {
       test: {
-        src: 'test/sass',
+        src: 'test/stylesheets',
         dest: 'test/docs',
         options: {
-          title: 'grunt-sassdoc test',
-          display_access: ['public', 'private'],
-          display_alias: false
+          config: 'test/view.json',
+          // Pass additional options.
+          // title: 'grunt-sassdoc test',
+          // display_access: ['public'],
+          display_alias: true
         }
       }
     },

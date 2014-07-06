@@ -1,7 +1,7 @@
 {
   "name": "grunt-sassdoc",
   "title": "grunt-sassdoc",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "SassDoc grunt task",
   "keywords": [
     "gruntplugin",
@@ -31,7 +31,8 @@
     "grunt-eslint": "^0.5.0",
     "grunt-simple-mocha": "^0.4.0",
     "load-grunt-tasks": "^0.6.0",
-    "sassdoc": "^1.0.0-rc.2",
+    "lodash": "^2.4.1",
+    "sassdoc": "^1.0.0-rc.6",
     "time-grunt": "^0.3.2"
   },
   "peerDependencies": {
