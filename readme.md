@@ -59,7 +59,7 @@ Generated documentation page title.
 #### version
 
 Type: `String | false`  
-Default: `false`
+Default: `null`
 
 Whether to display project version next to the page title.
 
@@ -86,13 +86,14 @@ You should really manage your options in one place._
 ### Config examples
 
 ```js
+// Example with external view configuration file.
 grunt.initConfig({
   sassdoc: {
     default: {
-      src: 'sass',
-      dest: 'docs',
+      src: 'path/to/sass',
+      dest: 'path/todocs',
       options: {
-        config: 'test/view.json'
+        config: 'path/to/view.json'
       }
     }
   },
@@ -100,13 +101,15 @@ grunt.initConfig({
 ```
 
 ```js
+// Example with passed in options.
 grunt.initConfig({
   sassdoc: {
     default: {
-      src: 'sass',
-      dest: 'docs',
+      src: 'path/to/sass',
+      dest: 'path/to/docs',
       options: {
         title: 'My cool project'
+        version: 'v1.5.0'
         display_access: ['public'],
         display_alias: true
       }
