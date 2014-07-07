@@ -1,4 +1,4 @@
-# grunt-sassdoc [![npm version](http://img.shields.io/npm/v/grunt-sassdoc.svg?style=flat)](https://www.npmjs.org/package/grunt-sassdoc) [![Build Status: Linux](http://img.shields.io/travis/pascalduez/grunt-sassdoc.svg?style=flat)](https://travis-ci.org/pascalduez/grunt-sassdoc.svg?branch=master)
+# grunt-sassdoc [![npm version](http://img.shields.io/npm/v/grunt-sassdoc.svg?style=flat)](https://www.npmjs.org/package/grunt-sassdoc) [![Build Status: Linux](http://img.shields.io/travis/pascalduez/grunt-sassdoc.svg?style=flat)](https://travis-ci.org/pascalduez/grunt-sassdoc?branch=master)
 
 > [SassDoc](https://github.com/HugoGiraudel/SassDoc) grunt task.
 
