@@ -37,14 +37,15 @@ module.exports = function (grunt) {
   grunt.registerMultiTask('sassdoc', 'Generates documentation', function () {
     var done = this.async();
 
-    // Try to fetch a custom title from package,
-    // defaults to 'SassDoc'.
+    // Try to fetch some custom config from package,
     var pkg = grunt.file.readJSON('package.json');
     var title = pkg ? pkg.title || pkg.name : 'SassDoc';
+    var version = pkg ? 'v' + pkg.version : false;
 
     var options = this.options({
       config: null,
       title: title,
+      version: version,
       display_access: ['public', 'private'],
       display_alias: false
     });

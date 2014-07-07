@@ -18,6 +18,7 @@ module.exports = function (grunt) {
           config: 'test/view.json',
           // Pass additional options.
           // title: 'grunt-sassdoc test',
+          // version: false,
           // display_access: ['public'],
           display_alias: true
         }

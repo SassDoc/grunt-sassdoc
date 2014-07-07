@@ -56,6 +56,13 @@ Default: `'SassDoc'`
 
 Generated documentation page title.
 
+#### version
+
+Type: `String | false`  
+Default: `false`
+
+Whether to display project version next to the page title.
+
 #### display_access
 
 Type: `Array`  
