@@ -24,10 +24,18 @@ module.exports = function (grunt) {
         src: 'test/stylesheets',
         dest: 'test/docs',
         options: {
-          title: pkg.title || pkg.name,
-          version: 'v' + pkg.version,
-          display_access: ['public'],
-          display_alias: true
+          display: {
+            access: ['public', 'private'],
+            alias: false,
+            watermark: true
+          },
+          package: {
+            name: pkg.title,
+            version: pkg.version,
+            license: pkg.license.type,
+            homepage: pkg.homepage,
+            description: pkg.description
+          }
         }
       }
     },

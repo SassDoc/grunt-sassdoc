@@ -1,3 +1,9 @@
 {
-  "title": "Config file test"
+  "display": {
+    "access": ["public"],
+    "alias": true,
+    "watermark": true
+  },
+
+  "package": "./package.json"
 }

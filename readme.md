@@ -49,33 +49,45 @@ Default: `null`
 
 Path to a view configuration file.
 
-#### title
-
-Type: `String`  
-Default: `'SassDoc'`
-
-Generated documentation page title.
-
-#### version
-
-Type: `String | false`  
-Default: `null`
-
-Whether to display project version next to the page title.
-
-#### display_access
+#### display.access
 
 Type: `Array`  
 Default: `['public', 'private']`
 
 Access levels that should be displayed.
 
-#### display_alias
+#### display.alias
 
 Type: `Boolean`  
 Default: `false`
 
 Enable/disable display of alias items.
+
+
+#### display.watermark
+
+Type: `Boolean`  
+Default: `false`
+
+Enable/disable display of SassDoc watermark in footer.
+
+
+### package
+
+Type: `String | Object`  
+Default: `'./package.json'`
+
+Pass your project informations to the generated view.
+Either a path to your `package.json` or an object.
+
+Following keys will be looked for:
+`name`
+`version`
+`license`
+`homepage`
+`description`
+
+
 
 _**Heads up**: If a config file is passed and found, its options will prevail over defauts.
 Additionnal options passed to the grunt task, will complement it but not override it.
@@ -108,10 +120,12 @@ grunt.initConfig({
       src: 'path/to/sass',
       dest: 'path/to/docs',
       options: {
-        title: 'My cool project'
-        version: 'v1.5.0'
-        display_access: ['public'],
-        display_alias: true
+        display: {
+          access: ['public', 'private'],
+          alias: true,
+          watermark: true
+        },
+        package: './package.json'
       }
     }
   },

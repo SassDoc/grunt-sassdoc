@@ -39,12 +39,13 @@ module.exports = function (grunt) {
 
     var options = this.options({
       config: null,
-      title: 'SassDoc',
-      version: null,
-      display_access: ['public', 'private'],
-      display_alias: false
+      display: {
+        access: ['public', 'private'],
+        alias: false,
+        watermark: true
+      },
+      package: null
     });
-
 
     // If a config file is passed and found,
     // its options will prevail over defauts.
