@@ -39,6 +39,7 @@ module.exports = function (grunt) {
     var done = this.async();
 
     var options = this.options({
+      verbose: false,
       config: null,
       display: {
         access: ['public', 'private'],
@@ -66,6 +67,11 @@ module.exports = function (grunt) {
     // If options.package is not usable, delete it.
     if (!_.isPlainObject(options.package) || _.isEmpty(options.package)) {
       options = _.omit(options, 'package');
+    }
+
+    // Enable SassDoc logger.
+    if (options.verbose) {
+      sassdoc.logger.enabled = true;
     }
 
     this.files.forEach(function (filePair) {

@@ -17,6 +17,7 @@ module.exports = function (grunt) {
         src: 'test/fixture',
         dest: 'test/docs',
         options: {
+          verbose: true,
           config: 'test/view.json'
         }
       },
@@ -24,6 +25,7 @@ module.exports = function (grunt) {
         src: 'test/fixture',
         dest: 'test/docs',
         options: {
+          verbose: true,
           display: {
             access: ['public', 'private'],
             alias: false,

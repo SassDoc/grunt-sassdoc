@@ -42,6 +42,15 @@ Task targets, files and options may be specified according to the grunt [Configu
 Any specified option will be passed through directly to SassDoc, thus you can specify any option that SassDoc supports.
 See the [SassDoc documentation](https://github.com/SassDoc/SassDoc#pass-extra-variables-to-the-view) for a list of supported options.
 
+
+### verbose
+
+Type: `Boolean`  
+Default: `false`
+
+Whether to enable SassDoc own logger or not.
+
+
 #### config
 
 Type: `String`  
@@ -49,12 +58,14 @@ Default: `null`
 
 Path to a view configuration file.
 
+
 #### display.access
 
 Type: `Array`  
 Default: `['public', 'private']`
 
 Access levels that should be displayed.
+
 
 #### display.alias
 

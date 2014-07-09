@@ -1,7 +1,7 @@
 {
   "name": "grunt-sassdoc",
   "title": "grunt-sassdoc",
-  "version": "0.1.9",
+  "version": "0.2.0",
   "description": "SassDoc grunt task",
   "keywords": [
     "gruntplugin",
@@ -45,6 +45,6 @@
     "url": "http://unlicense.org"
   },
   "scripts": {
-    "test": "grunt test_config && grunt test_options"
+    "test": "grunt test"
   }
 }
