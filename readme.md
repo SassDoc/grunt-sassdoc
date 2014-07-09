@@ -1,6 +1,6 @@
 # grunt-sassdoc [![npm version](http://img.shields.io/npm/v/grunt-sassdoc.svg?style=flat)](https://www.npmjs.org/package/grunt-sassdoc) [![Build Status: Linux](http://img.shields.io/travis/SassDoc/grunt-sassdoc.svg?style=flat)](https://travis-ci.org/SassDoc/grunt-sassdoc?branch=master)
 
-> [SassDoc](https://github.com/SassDoc/SassDoc) grunt task.
+> [SassDoc](https://github.com/SassDoc/SassDoc) Grunt task.
 
 
 ## Getting Started
@@ -67,7 +67,7 @@ Enable/disable display of alias items.
 #### display.watermark
 
 Type: `Boolean`  
-Default: `false`
+Default: `true`
 
 Enable/disable display of SassDoc watermark in footer.
 
@@ -81,6 +81,7 @@ Pass your project informations to the generated view.
 Either a path to your `package.json` or an object.
 
 Following keys will be looked for:
+`title`
 `name`
 `version`
 `license`

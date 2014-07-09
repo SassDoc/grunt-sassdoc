@@ -24,9 +24,9 @@ module.exports = function (grunt) {
     });
   };
 
-  var loadConfig = function (path) {
+  var loadJSON = function (path) {
     if (!grunt.file.exists(path)) {
-      grunt.log.warn('Config file "' + chalk.cyan(path) + '" not found.');
+      grunt.log.warn('JSON file "' + chalk.cyan(path) + '" not found.');
       return false;
     }
     else {
@@ -50,12 +50,21 @@ module.exports = function (grunt) {
     // If a config file is passed and found,
     // its options will prevail over defauts.
     if (options.config) {
-      var config = loadConfig(options.config);
+      var config = loadJSON(options.config);
 
       if (config) {
         options = _.assign(options, config);
         options = _.omit(options, 'config');
       }
+    }
+
+    // If a package path is passed try to load the file.
+    if (_.isString(options.package)) {
+      options.package = loadJSON(options.package);
+    }
+    // If options.package is not usable, delete it.
+    if (!_.isPlainObject(options.package) || _.isEmpty(options.package)) {
+      options = _.omit(options, 'package');
     }
 
     this.files.forEach(function (filePair) {

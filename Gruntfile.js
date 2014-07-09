@@ -29,13 +29,7 @@ module.exports = function (grunt) {
             alias: false,
             watermark: true
           },
-          package: {
-            name: pkg.title,
-            version: pkg.version,
-            license: pkg.license.type,
-            homepage: pkg.homepage,
-            description: pkg.description
-          }
+          package: pkg
         }
       }
     },
