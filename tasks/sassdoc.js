@@ -5,12 +5,13 @@
  * https://github.com/SassDoc/grunt-SassDoc/blob/master/UNLICENCE
  */
 
-module.exports = function (grunt) {
-  'use strict';
+'use strict';
 
-  var sassdoc = require('sassdoc');
-  var chalk = require('chalk');
-  var _ = require('lodash');
+var sassdoc = require('sassdoc');
+var chalk = require('chalk');
+var _ = require('lodash');
+
+module.exports = function (grunt) {
 
   var validateSrc = function (filePair) {
     return filePair.src.filter(function (filepath) {

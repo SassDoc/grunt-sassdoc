@@ -14,14 +14,14 @@ module.exports = function (grunt) {
 
     sassdoc: {
       test_config: {
-        src: 'test/stylesheets',
+        src: 'test/fixture',
         dest: 'test/docs',
         options: {
           config: 'test/view.json'
         }
       },
       test_options: {
-        src: 'test/stylesheets',
+        src: 'test/fixture',
         dest: 'test/docs',
         options: {
           display: {
@@ -34,9 +34,13 @@ module.exports = function (grunt) {
       }
     },
 
-    simplemocha: {
+    mochaTest: {
       test: {
-        src: 'test/*.js'
+        options: {
+          reporter: 'spec',
+          clearRequireCache: true
+        },
+        src: ['test/*.js']
       }
     },
 
@@ -47,7 +51,7 @@ module.exports = function (grunt) {
     eslint: {
       target: ['tasks/*.js', 'test/*.js'],
       options: {
-        // config: 'conf/eslint.json'
+        config: 'conf/eslint.json'
       }
     }
 
@@ -57,19 +61,20 @@ module.exports = function (grunt) {
 
   grunt.registerTask('test_config', [
     'sassdoc:test_config',
-    'simplemocha:test',
+    'mochaTest:test',
     'clean:test'
   ]);
 
   grunt.registerTask('test_options', [
     'sassdoc:test_options',
-    'simplemocha:test',
+    'mochaTest:test',
     'clean:test'
   ]);
 
-  grunt.registerTask('test', function () {
-    // https://github.com/yaymukund/grunt-simple-mocha/pull/30
-    grunt.task.run(['test_config', 'test_options']);
-  });
+  grunt.registerTask('test', [
+    'eslint',
+    'test_config',
+    'test_options'
+  ]);
 
 };

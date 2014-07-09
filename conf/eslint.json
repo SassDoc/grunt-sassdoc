@@ -1,5 +1,13 @@
 {
-  "rules": {
+  "env": {
+    "browser": false,
+    "node": true,
+    "amd": false,
+    "mocha": true
+  },
 
-	}
+  "rules": {
+    "no-global-strict": 0,
+    "quotes": "single"
+  }
 }

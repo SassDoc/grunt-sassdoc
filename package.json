@@ -1,7 +1,7 @@
 {
   "name": "grunt-sassdoc",
   "title": "grunt-sassdoc",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "SassDoc grunt task",
   "keywords": [
     "gruntplugin",
@@ -30,7 +30,7 @@
     "grunt": "^0.4.5",
     "grunt-contrib-clean": "^0.5.0",
     "grunt-eslint": "^0.5.0",
-    "grunt-simple-mocha": "^0.4.0",
+    "grunt-mocha-test": "^0.11.0",
     "load-grunt-tasks": "^0.6.0",
     "time-grunt": "^0.3.2"
   },

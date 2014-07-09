@@ -1,0 +1,88 @@
+
+/**
+ * Test: variable public.
+ * ---
+ * @type Map
+ */
+$test-var-public: (
+  key: 'val'
+);
+
+
+/**
+ * Test: variable private.
+ * ---
+ * @access private
+ * ---
+ * @type Map
+ */
+$test-var-private: (
+  key: 'val'
+);
+
+
+/**
+ * Test: function public.
+ * ---
+ * @param {String} $one - Param one description
+ * @param {String} $two - Param two description
+ * ---
+ * @returns {*}
+ */
+@function test-func-public($one, $two) {
+
+}
+
+
+/**
+ * Test: function private.
+ * ---
+ * @access private
+ * ---
+ * @param {String} $one - Param one description
+ * @param {String} $two - Param two description
+ * ---
+ * @returns {*}
+ */
+@function test-func-private($one, $two) {
+
+}
+
+
+/**
+ * Test: function alias.
+ * ---
+ * @alias test-func-public
+ * ---
+ * @param {String} $one - Param one description
+ * @param {String} $two - Param two description
+ * ---
+ * @returns {*}
+ */
+@function test-func-alias($one, $two) {
+
+}
+
+
+/**
+ * Test: mixin public.
+ * ---
+ * @param {String} $one - Param one description
+ * @param {String} $two - Param two description
+ */
+@mixin test-mix-public($one, $two) {
+
+}
+
+
+/**
+ * Test: mixin private.
+ * ---
+ * @access private
+ * ---
+ * @param {String} $one - Param one description
+ * @param {String} $two - Param two description
+ */
+@mixin test-mix-private($one, $two) {
+
+}
