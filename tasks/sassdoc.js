@@ -2,7 +2,7 @@
  * grunt-sassdoc
  *
  * unlicenced
- * https://github.com/pascalduez/grunt-SassDoc/blob/master/UNLICENCE
+ * https://github.com/SassDoc/grunt-SassDoc/blob/master/UNLICENCE
  */
 
 module.exports = function (grunt) {

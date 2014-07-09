@@ -1,6 +1,6 @@
-# grunt-sassdoc [![npm version](http://img.shields.io/npm/v/grunt-sassdoc.svg?style=flat)](https://www.npmjs.org/package/grunt-sassdoc) [![Build Status: Linux](http://img.shields.io/travis/pascalduez/grunt-sassdoc.svg?style=flat)](https://travis-ci.org/pascalduez/grunt-sassdoc?branch=master)
+# grunt-sassdoc [![npm version](http://img.shields.io/npm/v/grunt-sassdoc.svg?style=flat)](https://www.npmjs.org/package/grunt-sassdoc) [![Build Status: Linux](http://img.shields.io/travis/SassDoc/grunt-sassdoc.svg?style=flat)](https://travis-ci.org/SassDoc/grunt-sassdoc?branch=master)
 
-> [SassDoc](https://github.com/HugoGiraudel/SassDoc) grunt task.
+> [SassDoc](https://github.com/SassDoc/SassDoc) grunt task.
 
 
 ## Getting Started
@@ -40,7 +40,7 @@ Task targets, files and options may be specified according to the grunt [Configu
 ## Options
 
 Any specified option will be passed through directly to SassDoc, thus you can specify any option that SassDoc supports.
-See the [SassDoc documentation](https://github.com/HugoGiraudel/SassDoc#pass-extra-variables-to-the-view) for a list of supported options.
+See the [SassDoc documentation](https://github.com/SassDoc/SassDoc#pass-extra-variables-to-the-view) for a list of supported options.
 
 #### config
 
@@ -72,7 +72,7 @@ Default: `false`
 Enable/disable display of SassDoc watermark in footer.
 
 
-### package
+#### package
 
 Type: `String | Object`  
 Default: `'./package.json'`

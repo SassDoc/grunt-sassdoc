@@ -1,7 +1,7 @@
 {
   "name": "grunt-sassdoc",
   "title": "grunt-sassdoc",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "SassDoc grunt task",
   "keywords": [
     "gruntplugin",
@@ -11,15 +11,15 @@
     "doc",
     "documentation"
   ],
-  "homepage": "https://github.com/pascalduez/grunt-sassdoc",
-  "bugs": "https://github.com/pascalduez/grunt-sassdoc/issues",
+  "homepage": "https://github.com/SassDoc/grunt-sassdoc",
+  "bugs": "https://github.com/SassDoc/grunt-sassdoc/issues",
   "author": {
     "name": "Pascal Duez",
     "url": "https://github.com/pascalduez"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/pascalduez/grunt-sassdoc.git"
+    "url": "git://github.com/SassDoc/grunt-sassdoc.git"
   },
   "dependencies": {
     "chalk": "^0.5.0",
