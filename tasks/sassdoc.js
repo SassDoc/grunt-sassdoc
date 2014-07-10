@@ -37,6 +37,7 @@ module.exports = function (grunt) {
 
   grunt.registerMultiTask('sassdoc', 'Generates documentation', function () {
     var done = this.async();
+    var target = this.target;
 
     var options = this.options({
       verbose: false,
@@ -74,23 +75,39 @@ module.exports = function (grunt) {
       sassdoc.logger.enabled = true;
     }
 
-    this.files.forEach(function (filePair) {
+    function document(filePair) {
       var src = validateSrc(filePair);
+      var dest = filePair.dest;
 
       if (!src.length) {
         return grunt.fail.warn('No valid source provided');
       }
 
-      sassdoc.documentize(src[0], filePair.dest, options)
+      src = src[0];
+
+      // Emit start event if anyone is listening.
+      if (grunt.event.listeners('sassdoc.start').length > 0) {
+        grunt.event.emit('sassdoc.start', target, src, dest);
+      }
+
+      sassdoc.documentize(src, dest, options)
         .then(function () {
           grunt.log.ok('SassDoc documentation successfully generated.');
+
+          // Emit done event if anyone is listening.
+          if (grunt.event.listeners('sassdoc.done').length > 0) {
+            grunt.event.emit('sassdoc.done', target, src, dest);
+          }
+
           done();
         })
         .catch(function (err) {
           grunt.log.error(err);
           grunt.fail.warn('SassDoc documentation failed.');
         });
-    });
+    }
+
+    this.files.forEach(document);
   });
 
 };

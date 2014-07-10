@@ -43,7 +43,7 @@ Any specified option will be passed through directly to SassDoc, thus you can sp
 See the [SassDoc documentation](https://github.com/SassDoc/SassDoc#pass-extra-variables-to-the-view) for a list of supported options.
 
 
-### verbose
+#### verbose
 
 Type: `Boolean`  
 Default: `false`
@@ -143,6 +143,27 @@ grunt.initConfig({
   },
 });
 ```
+
+
+### Events
+
+This task will emit a `start` event when compilation begins, and a `done` event on completion.
+This is useful if you would like simple notifications about the compile process.
+**The start and done events are not intended for replacing the standard Grunt API for configuring and running tasks.**  
+Here is a simple example using the watch event:
+
+```js
+// Examples using start and done events.
+grunt.event.on('sassdoc.start', function (target, src, dest) {
+  grunt.log.writeln(target + ': compiling ' + src + ' to ' + dest);
+});
+
+grunt.event.on('sassdoc.done', function (target, src, dest) {
+  grunt.log.writeln(target + ': ' + src + ' compiled to ' + dest);
+});
+```
+
+
 
 ## Authors
 

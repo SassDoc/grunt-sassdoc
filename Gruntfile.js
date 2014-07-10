@@ -1,6 +1,6 @@
+'use strict';
 
 module.exports = function (grunt) {
-  'use strict';
 
   // Load all grunt tasks matching the `grunt-*` pattern.
   require('load-grunt-tasks')(grunt);
@@ -78,5 +78,15 @@ module.exports = function (grunt) {
     'test_config',
     'test_options'
   ]);
+
+
+  // Examples using start and done events.
+  // grunt.event.on('sassdoc.start', function (target, src, dest) {
+  //   grunt.log.writeln(target + ': compiling ' + src + ' to ' + dest);
+  // });
+  //
+  // grunt.event.on('sassdoc.done', function (target, src, dest) {
+  //   grunt.log.writeln(target + ': ' + src + ' compiled to ' + dest);
+  // });
 
 };
