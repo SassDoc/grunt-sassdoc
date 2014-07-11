@@ -75,7 +75,7 @@ module.exports = function (grunt) {
       sassdoc.logger.enabled = true;
     }
 
-    function document(filePair) {
+    function compile(filePair) {
       var src = validateSrc(filePair);
       var dest = filePair.dest;
 
@@ -107,7 +107,7 @@ module.exports = function (grunt) {
         });
     }
 
-    this.files.forEach(document);
+    this.files.forEach(compile);
   });
 
 };

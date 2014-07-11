@@ -51,10 +51,7 @@ module.exports = function (grunt) {
     },
 
     eslint: {
-      target: ['tasks/*.js', 'test/*.js'],
-      options: {
-        config: 'conf/eslint.json'
-      }
+      target: ['tasks/*.js', 'test/*.js']
     }
 
   });
