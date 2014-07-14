@@ -150,7 +150,7 @@ grunt.initConfig({
 This task will emit a `start` event when compilation begins, and a `done` event on completion.
 This is useful if you would like simple notifications about the compile process.
 **The start and done events are not intended for replacing the standard Grunt API for configuring and running tasks.**  
-Here is a simple example using the watch event:
+Here is a simple example using them:
 
 ```js
 // Examples using start and done events.

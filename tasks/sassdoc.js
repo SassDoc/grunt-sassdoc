@@ -2,7 +2,7 @@
  * grunt-sassdoc
  *
  * unlicenced
- * https://github.com/SassDoc/grunt-SassDoc/blob/master/UNLICENCE
+ * https://github.com/SassDoc/grunt-sassdoc/blob/master/UNLICENCE
  */
 
 'use strict';
