@@ -77,7 +77,7 @@ module.exports = function (grunt) {
   ]);
 
 
-  // Examples using start and done events.
+  // // Examples using start and done events.
   // grunt.event.on('sassdoc.start', function (target, src, dest) {
   //   grunt.log.writeln(target + ': compiling ' + src + ' to ' + dest);
   // });

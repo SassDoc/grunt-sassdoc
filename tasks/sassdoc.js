@@ -13,7 +13,7 @@ var _ = require('lodash');
 
 module.exports = function (grunt) {
 
-  var validateSrc = function (filePair) {
+  function validateSrc(filePair) {
     return filePair.src.filter(function (filepath) {
       if (!grunt.file.exists(filepath)) {
         grunt.log.warn('Source file "' + chalk.cyan(filepath) + '" not found.');
@@ -23,9 +23,9 @@ module.exports = function (grunt) {
         return true;
       }
     });
-  };
+  }
 
-  var loadJSON = function (path) {
+  function loadJSON(path) {
     if (!grunt.file.exists(path)) {
       grunt.log.warn('JSON file "' + chalk.cyan(path) + '" not found.');
       return false;
@@ -33,12 +33,10 @@ module.exports = function (grunt) {
     else {
       return grunt.file.readJSON(path);
     }
-  };
+  }
 
-  grunt.registerMultiTask('sassdoc', 'Generates documentation', function () {
-    var done = this.async();
-    var target = this.target;
-
+  function handleOptions() {
+    // Defaults
     var options = this.options({
       verbose: false,
       config: null,
@@ -57,7 +55,6 @@ module.exports = function (grunt) {
 
       if (config) {
         options = _.assign(options, config);
-        options = _.omit(options, 'config');
       }
     }
 
@@ -74,6 +71,18 @@ module.exports = function (grunt) {
     if (options.verbose) {
       sassdoc.logger.enabled = true;
     }
+
+    // Clean options not expected by SassDoc.
+    options = _.omit(options, ['verbose', 'config']);
+
+    return options;
+  }
+
+
+  grunt.registerMultiTask('sassdoc', 'Generates documentation', function () {
+    var done = this.async();
+    var target = this.target;
+    var options = handleOptions.call(this);
 
     function compile(filePair) {
       var src = validateSrc(filePair);
