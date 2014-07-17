@@ -1,6 +1,6 @@
 # grunt-sassdoc [![npm version](http://img.shields.io/npm/v/grunt-sassdoc.svg?style=flat)](https://www.npmjs.org/package/grunt-sassdoc) [![Build Status: Linux](http://img.shields.io/travis/SassDoc/grunt-sassdoc.svg?style=flat)](https://travis-ci.org/SassDoc/grunt-sassdoc?branch=master)
 
-> [SassDoc](https://github.com/SassDoc/SassDoc) Grunt task.
+> [SassDoc](https://github.com/SassDoc/sassdoc) Grunt task.
 
 
 ## Getting Started
