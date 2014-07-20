@@ -36,14 +36,8 @@ module.exports = function (grunt) {
       }
     },
 
-    mochaTest: {
-      test: {
-        options: {
-          reporter: 'spec',
-          clearRequireCache: true
-        },
-        src: ['test/*.js']
-      }
+    tape: {
+      files: ['test/*-test.js']
     },
 
     clean: {
@@ -60,13 +54,13 @@ module.exports = function (grunt) {
 
   grunt.registerTask('test_config', [
     'sassdoc:test_config',
-    'mochaTest:test',
+    'tape',
     'clean:test'
   ]);
 
   grunt.registerTask('test_options', [
     'sassdoc:test_options',
-    'mochaTest:test',
+    'tape',
     'clean:test'
   ]);
 

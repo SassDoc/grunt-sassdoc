@@ -2,17 +2,23 @@
 'use strict';
 
 var fs = require('fs');
-var assert = require('assert');
+var test = require('tape');
 
-describe('sassdoc', function () {
+test('sassdoc', function (t) {
+  t.plan(3);
 
-  it('Should create a `docs` dir', function () {
-    assert(fs.existsSync('test/docs'));
-  });
+  t.assert(
+    fs.existsSync('test/docs'),
+    'Should create a `docs` dir'
+  );
 
-  it('Should create SassDocs files', function () {
-    assert(fs.existsSync('test/docs/index.html'));
-    assert(fs.existsSync('test/docs/assets'));
-  });
+  t.assert(
+    fs.existsSync('test/docs/index.html'),
+    'Should create SassDocs index'
+  );
 
+  t.assert(
+    fs.existsSync('test/docs/assets'),
+    'Should dump SassDocs assets'
+  );
 });
