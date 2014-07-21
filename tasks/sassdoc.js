@@ -45,7 +45,8 @@ module.exports = function (grunt) {
         alias: false,
         watermark: true
       },
-      package: null
+      package: null,
+      theme: 'default'
     });
 
     // If a config file is passed and found,

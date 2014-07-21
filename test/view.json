@@ -4,6 +4,6 @@
     "alias": true,
     "watermark": true
   },
-
-  "package": "./package.json"
+  "package": "./package.json",
+  "theme": "default"
 }

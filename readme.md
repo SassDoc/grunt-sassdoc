@@ -100,6 +100,14 @@ Following keys will be looked for:
 `description`
 
 
+#### theme
+
+Type: `String`  
+Default: `'default'`
+
+Name of a custom theme, either a published package or a local one.
+Check the [doc](https://github.com/SassDoc/sassdoc/wiki/Using-Your-Own-Theme) for more infos.
+
 
 _**Heads up**: If a config file is passed and found, its options will prevail over defauts.
 Additionnal options passed to the grunt task, will complement it but not override it.
@@ -137,7 +145,8 @@ grunt.initConfig({
           alias: true,
           watermark: true
         },
-        package: './package.json'
+        package: './package.json',
+        theme: 'sassdoc-theme-dark'
       }
     }
   },

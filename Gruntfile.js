@@ -31,7 +31,8 @@ module.exports = function (grunt) {
             alias: false,
             watermark: true
           },
-          package: pkg
+          package: pkg,
+          theme: 'default'
         }
       }
     },
