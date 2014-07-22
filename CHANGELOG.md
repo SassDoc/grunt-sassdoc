@@ -5,7 +5,8 @@
 ### Features
 
 * Added `theme` config option.
-* update SassDoc dep to 1.2.0.
+* Update SassDoc dep to 1.2.0.
+([25984cea70](https://github.com/SassDoc/grunt-sassdoc/commit/25984cea70711f0047b52942ba447392fc396418))
 
 
 ## 0.4.0 <span style="font-size: .8em">(2014-07-14)</span>
