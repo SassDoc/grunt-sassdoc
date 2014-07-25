@@ -33,6 +33,11 @@ module.exports = function (grunt) {
           },
           package: pkg
         }
+      },
+      test_fail: {
+        src: 'should/fail',
+        dest: 'test/docs',
+        options: {}
       }
     },
 
