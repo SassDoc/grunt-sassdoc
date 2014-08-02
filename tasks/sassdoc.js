@@ -45,6 +45,9 @@ module.exports = function (grunt) {
         alias: false,
         watermark: true
       },
+      groups: {
+        'undefined': 'Ungrouped'
+      },
       package: null,
       theme: 'default'
     });

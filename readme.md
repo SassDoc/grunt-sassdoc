@@ -86,7 +86,7 @@ Enable/disable display of SassDoc watermark in footer.
 #### package
 
 Type: `String | Object`  
-Default: `'./package.json'`
+Default: `null`
 
 Pass your project informations to the generated view.
 Either a path to your `package.json` or an object.
@@ -109,6 +109,16 @@ Name of a custom theme, either a published package or a local one.
 Check the [doc](https://github.com/SassDoc/sassdoc/wiki/Using-Your-Own-Theme) for more infos.
 
 
+#### groups
+
+Type: `Object`  
+Default: `{ 'undefined': 'Ungrouped' }`
+
+Give friendly names to your groups, if any.
+Check the [doc](https://github.com/SassDoc/sassdoc-filter#group-name) for more infos.
+
+
+
 _**Heads up**: If a config file is passed and found, its options will prevail over defauts.
 Additionnal options passed to the grunt task, will complement it but not override it.
 You should really manage your options in one place._
@@ -116,6 +126,18 @@ You should really manage your options in one place._
 
 
 ### Config examples
+
+```js
+// Bare minimum example.
+grunt.initConfig({
+  sassdoc: {
+    default: {
+      src: 'path/to/sass',
+      dest: 'path/todocs'
+    }
+  }
+});
+```
 
 ```js
 // Example with external view configuration file.
@@ -128,7 +150,7 @@ grunt.initConfig({
         config: 'path/to/view.json'
       }
     }
-  },
+  }
 });
 ```
 
@@ -146,10 +168,16 @@ grunt.initConfig({
           watermark: true
         },
         package: './package.json',
-        theme: 'sassdoc-theme-dark'
+        theme: 'sassdoc-theme-dark',
+        groups: {
+          'slug': 'Title',
+          'helpers': 'Helpers',
+          'hacks': 'Dirty Hacks & Fixes',
+          'undefined': 'Ungrouped'
+        }
       }
     }
-  },
+  }
 });
 ```
 

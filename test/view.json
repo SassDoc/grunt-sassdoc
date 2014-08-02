@@ -1,8 +1,11 @@
 {
   "display": {
-    "access": ["public"],
-    "alias": true,
+    "access": ["public", "private"],
+    "alias": false,
     "watermark": true
+  },
+  "groups": {
+    "undefined": "Ungrouped"
   },
   "package": "./package.json",
   "theme": "default"

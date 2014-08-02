@@ -10,7 +10,7 @@ module.exports = function (grunt) {
 
   var pkg = grunt.file.readJSON('package.json');
 
-  grunt.initConfig({
+  var config = {
 
     sassdoc: {
       test_config: {
@@ -28,8 +28,11 @@ module.exports = function (grunt) {
           verbose: true,
           display: {
             access: ['public', 'private'],
-            alias: false,
+            alias: true,
             watermark: true
+          },
+          groups: {
+            'undefined': 'Ungrouped'
           },
           package: pkg,
           theme: 'default'
@@ -37,8 +40,7 @@ module.exports = function (grunt) {
       },
       test_fail: {
         src: 'should/fail',
-        dest: 'test/docs',
-        options: {}
+        dest: 'test/docs'
       }
     },
 
@@ -54,26 +56,20 @@ module.exports = function (grunt) {
       target: ['tasks/*.js', 'test/*.js']
     }
 
-  });
+  };
+
+  grunt.initConfig(config);
 
   grunt.loadTasks('tasks');
 
-  grunt.registerTask('test_config', [
+  grunt.registerTask('test', [
+    'eslint',
     'sassdoc:test_config',
     'tape',
-    'clean:test'
-  ]);
-
-  grunt.registerTask('test_options', [
+    'clean:test',
     'sassdoc:test_options',
     'tape',
     'clean:test'
-  ]);
-
-  grunt.registerTask('test', [
-    'eslint',
-    'test_config',
-    'test_options'
   ]);
 
 
