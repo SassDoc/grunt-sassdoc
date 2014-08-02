@@ -34,6 +34,11 @@ module.exports = function (grunt) {
           package: pkg,
           theme: 'default'
         }
+      },
+      test_fail: {
+        src: 'should/fail',
+        dest: 'test/docs',
+        options: {}
       }
     },
 

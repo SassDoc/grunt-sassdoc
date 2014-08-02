@@ -40,7 +40,7 @@ Task targets, files and options may be specified according to the grunt [Configu
 ## Options
 
 Any specified option will be passed through directly to SassDoc, thus you can specify any option that SassDoc supports.
-See the [SassDoc documentation](https://github.com/SassDoc/SassDoc#pass-extra-variables-to-the-view) for a list of supported options.
+See the [SassDoc documentation](https://github.com/SassDoc/sassdoc/wiki/Customising-the-View) for a list of supported options.
 
 
 #### verbose
