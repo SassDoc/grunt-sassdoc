@@ -1,9 +1,12 @@
 # grunt-sassdoc changelog
 
-## 0.5.0 <span style="font-size: .8em">(2014-07-)</span>
+## 0.5.0 <span style="font-size: .8em">(2014-08-06)</span>
 
 ### Features
 
+* SassDoc 1.2.0 ready
+* Added `groups`, `basePath` options
+([c967a23](https://github.com/SassDoc/grunt-sassdoc/commit/c967a235fb1ef15f1560ea96bbe74230eea503ab))
 * Added `theme` config option.
 * Update SassDoc dep to 1.2.0.
 ([25984cea70](https://github.com/SassDoc/grunt-sassdoc/commit/25984cea70711f0047b52942ba447392fc396418))
