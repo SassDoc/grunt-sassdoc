@@ -49,7 +49,8 @@ module.exports = function (grunt) {
         'undefined': 'Ungrouped'
       },
       package: null,
-      theme: 'default'
+      theme: 'default',
+      basePath: null
     });
 
     // If a config file is passed and found,

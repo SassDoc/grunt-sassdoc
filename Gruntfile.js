@@ -32,10 +32,13 @@ module.exports = function (grunt) {
             watermark: true
           },
           groups: {
-            'undefined': 'Ungrouped'
+            'undefined': 'Ungrouped',
+            'foo': 'Foo group',
+            'bar': 'Bar group'
           },
           package: pkg,
-          theme: 'default'
+          theme: 'default',
+          basePath: 'https://github.com/SassDoc/grunt-sassdoc/tree/master/test/fixture'
         }
       },
       test_fail: {

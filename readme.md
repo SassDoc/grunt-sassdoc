@@ -100,7 +100,8 @@ Following keys will be looked for:
 `description`
 
 
-#### theme
+#### theme <span style="font-size: .7em">*(since sassdoc@1.2.0)*</span>
+
 
 Type: `String`  
 Default: `'default'`
@@ -109,13 +110,22 @@ Name of a custom theme, either a published package or a local one.
 Check the [doc](https://github.com/SassDoc/sassdoc/wiki/Using-Your-Own-Theme) for more infos.
 
 
-#### groups
+#### groups <span style="font-size: .7em">*(since sassdoc@1.2.0)*</span>
 
 Type: `Object`  
 Default: `{ 'undefined': 'Ungrouped' }`
 
 Give friendly names to your groups, if any.
 Check the [doc](https://github.com/SassDoc/sassdoc-filter#group-name) for more infos.
+
+
+#### basePath <span style="font-size: .7em">*(since sassdoc@1.2.0)*</span>
+
+Type: `String`  
+Default: `null`
+
+An URL or a path which will be transformed in a link to the source file.
+Check the [doc](https://github.com/SassDoc/sassdoc/wiki/Customising-the-View) for more infos.
 
 
 
@@ -156,6 +166,8 @@ grunt.initConfig({
 
 ```js
 // Example with passed in options.
+// Tip: you don't need to pass every options,
+// just override the one you need.
 grunt.initConfig({
   sassdoc: {
     default: {
@@ -174,7 +186,8 @@ grunt.initConfig({
           'helpers': 'Helpers',
           'hacks': 'Dirty Hacks & Fixes',
           'undefined': 'Ungrouped'
-        }
+        },
+        basePath: 'https://github.com/SassDoc/sassdoc'
       }
     }
   }

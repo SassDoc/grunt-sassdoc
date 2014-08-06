@@ -8,5 +8,6 @@
     "undefined": "Ungrouped"
   },
   "package": "./package.json",
-  "theme": "default"
+  "theme": "default",
+  "basePath": "https://github.com/SassDoc/grunt-sassdoc/tree/master/test/fixture"
 }

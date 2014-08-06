@@ -29,9 +29,7 @@ $test-var-private: (
  * ---
  * @returns {*}
  */
-@function test-func-public($one, $two) {
-
-}
+@function test-func-public($one, $two) {}
 
 
 /**
@@ -44,9 +42,7 @@ $test-var-private: (
  * ---
  * @returns {*}
  */
-@function test-func-private($one, $two) {
-
-}
+@function test-func-private($one, $two) {}
 
 
 /**
@@ -59,9 +55,7 @@ $test-var-private: (
  * ---
  * @returns {*}
  */
-@function test-func-alias($one, $two) {
-
-}
+@function test-func-alias($one, $two) {}
 
 
 /**
@@ -86,3 +80,69 @@ $test-var-private: (
 @mixin test-mix-private($one, $two) {
 
 }
+
+
+/**
+ * Test: function private.
+ * ---
+ * @access private
+ * ---
+ * @param {String} $one - Param one description
+ * @param {String} $two - Param two description
+ * ---
+ * @returns {*}
+ */
+@function test-func-private($one, $two) {}
+
+
+//
+// Groups
+//
+
+
+/**
+ * Test: var group foo.
+ * ---
+ * @group foo
+ */
+$test-var-group-foo: ();
+
+
+/**
+ * Test: function group foo.
+ * ---
+ * @group foo
+ */
+@function test-func-group-foo() {}
+
+
+/**
+ * Test: mixin group foo.
+ * ---
+ * @group foo
+ */
+@mixin test-mix-group-foo() {}
+
+
+/**
+ * Test: var group bar.
+ * ---
+ * @group bar
+ */
+$test-var-group-bar: ();
+
+
+/**
+ * Test: function group bar.
+ * ---
+ * @group bar
+ */
+@function test-func-group-bar() {}
+
+
+/**
+ * Test: mixin group bar.
+ * ---
+ * @group bar
+ */
+@mixin test-mix-group-bar() {}
