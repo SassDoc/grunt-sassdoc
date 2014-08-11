@@ -146,3 +146,24 @@ $test-var-group-bar: ();
  * @group bar
  */
 @mixin test-mix-group-bar() {}
+
+
+//
+// Filters
+//
+
+/**
+ * Test: function public.
+ * ---
+ * @author Hugo Giraudel
+ * ---
+ * @todo todo description
+ * ---
+ * @param {String} $one - Param one description
+ * @param {String} $two - Param two description
+ * ---
+ * @throws throws description
+ * ---
+ * @returns {*} returns description
+ */
+@function test-func-markdown($one, $two) {}

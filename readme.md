@@ -100,37 +100,40 @@ Following keys will be looked for:
 `description`
 
 
-#### theme <span style="font-size: .7em">*(since sassdoc@1.2.0)*</span>
+#### theme
 
 
 Type: `String`  
-Default: `'default'`
+Default: `'default'`  
+Since: `sassdoc@1.2.0`
 
 Name of a custom theme, either a published package or a local one.
 Check the [doc](https://github.com/SassDoc/sassdoc/wiki/Using-Your-Own-Theme) for more infos.
 
 
-#### groups <span style="font-size: .7em">*(since sassdoc@1.2.0)*</span>
+#### groups
 
 Type: `Object`  
-Default: `{ 'undefined': 'Ungrouped' }`
+Default: `{ 'undefined': 'Ungrouped' }`  
+Since: `sassdoc@1.2.0`
 
 Give friendly names to your groups, if any.
 Check the [doc](https://github.com/SassDoc/sassdoc-filter#group-name) for more infos.
 
 
-#### basePath <span style="font-size: .7em">*(since sassdoc@1.2.0)*</span>
+#### basePath
 
 Type: `String`  
-Default: `null`
+Default: `null`  
+Since: `sassdoc@1.2.0`
 
 An URL or a path which will be transformed in a link to the source file.
 Check the [doc](https://github.com/SassDoc/sassdoc/wiki/Customising-the-View) for more infos.
 
 
 
-_**Heads up**: If a config file is passed and found, its options will prevail over defauts.
-Additionnal options passed to the grunt task, will complement it but not override it.
+_**Heads up**: If a config file is passed and found, its options will prevail over defaults.
+Additional options passed to the Grunt task, will complement it but not override it.
 You should really manage your options in one place._
 
 

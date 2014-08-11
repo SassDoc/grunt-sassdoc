@@ -1,6 +1,7 @@
 # grunt-sassdoc changelog
 
-## 0.5.0 <span style="font-size: .8em">(2014-08-06)</span>
+## 1.0.0
+(2014-08-11)
 
 ### Features
 
@@ -12,7 +13,8 @@
 ([25984cea70](https://github.com/SassDoc/grunt-sassdoc/commit/25984cea70711f0047b52942ba447392fc396418))
 
 
-## 0.4.0 <span style="font-size: .8em">(2014-07-14)</span>
+## 0.4.0
+(2014-07-14)
 
 ### Refactor
 
@@ -20,7 +22,8 @@
 ([dba450acd0](https://github.com/SassDoc/grunt-sassdoc/commit/dba450acd0ec045712f73b5b733688b41df61f27))
 
 
-## 0.3.0 <span style="font-size: .8em">(2014-07-10)</span>
+## 0.3.0
+(2014-07-10)
 
 ### Features
 
@@ -28,7 +31,8 @@
 ([e85cbe86ad](https://github.com/SassDoc/grunt-sassdoc/commit/e85cbe86ad803ca228a4944266a24935c2ce1133))
 
 
-## 0.2.0 <span style="font-size: .8em">(2014-07-09)</span>
+## 0.2.0
+(2014-07-09)
 
 ### Features
 
