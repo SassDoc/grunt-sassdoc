@@ -13,7 +13,7 @@ module.exports = function (grunt) {
   var config = {
 
     sassdoc: {
-      test_config: {
+      config: {
         src: 'test/fixture',
         dest: 'test/docs',
         options: {
@@ -21,7 +21,7 @@ module.exports = function (grunt) {
           config: 'test/view.json'
         }
       },
-      test_options: {
+      opts: {
         src: 'test/fixture',
         dest: 'test/docs',
         options: {
@@ -41,8 +41,12 @@ module.exports = function (grunt) {
           basePath: 'https://github.com/SassDoc/grunt-sassdoc/tree/master/test/fixture'
         }
       },
-      test_fail: {
+      fail: {
         src: 'should/fail',
+        dest: 'test/docs'
+      },
+      bare: {
+        src: 'test/fixture',
         dest: 'test/docs'
       }
     },

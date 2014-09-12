@@ -146,7 +146,7 @@ grunt.initConfig({
   sassdoc: {
     default: {
       src: 'path/to/sass',
-      dest: 'path/todocs'
+      dest: 'path/to/docs'
     }
   }
 });
@@ -158,7 +158,7 @@ grunt.initConfig({
   sassdoc: {
     default: {
       src: 'path/to/sass',
-      dest: 'path/todocs',
+      dest: 'path/to/docs',
       options: {
         config: 'path/to/view.json'
       }
@@ -169,7 +169,7 @@ grunt.initConfig({
 
 ```js
 // Example with passed in options.
-// Tip: you don't need to pass every options,
+// Tip: you're not required to to pass every options,
 // just override the one you need.
 grunt.initConfig({
   sassdoc: {
