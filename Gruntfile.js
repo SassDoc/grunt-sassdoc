@@ -71,10 +71,10 @@ module.exports = function (grunt) {
 
   grunt.registerTask('test', [
     'eslint',
-    'sassdoc:test_config',
+    'sassdoc:config',
     'tape',
     'clean:test',
-    'sassdoc:test_options',
+    'sassdoc:opts',
     'tape',
     'clean:test'
   ]);
