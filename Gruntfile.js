@@ -18,7 +18,9 @@ module.exports = function (grunt) {
         dest: 'test/docs',
         options: {
           verbose: true,
-          config: 'test/view.json'
+          config: 'test/view.json',
+          force: true,
+          interactive: false
         }
       },
       opts: {
@@ -38,7 +40,9 @@ module.exports = function (grunt) {
           },
           package: pkg,
           theme: 'default',
-          basePath: 'https://github.com/SassDoc/grunt-sassdoc/tree/master/test/fixture'
+          basePath: 'https://github.com/SassDoc/grunt-sassdoc/tree/master/test/fixture',
+          force: true,
+          interactive: false
         }
       },
       fail: {

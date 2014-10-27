@@ -50,7 +50,9 @@ module.exports = function (grunt) {
       },
       package: null,
       theme: 'default',
-      basePath: null
+      basePath: null,
+      force: false,
+      interactive: true
     });
 
     // If a config file is passed and found,
