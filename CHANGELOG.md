@@ -1,5 +1,13 @@
 # grunt-sassdoc changelog
 
+## 1.1.0
+(2014-10-27)
+
+### Features
+
+* Add default safe-wipe options
+([1be0d24](https://github.com/SassDoc/grunt-sassdoc/commit/1be0d2413b57a781e110e0893dac65d23e5ece48))
+
 ## 1.0.0
 (2014-08-11)
 
