@@ -22,7 +22,7 @@
     "url": "git://github.com/SassDoc/grunt-sassdoc.git"
   },
   "dependencies": {
-    "sassdoc": "^1.2.0",
+    "sassdoc": "2.0.0-rc.3",
     "chalk": "^0.5.0",
     "lodash": "^2.4.1"
   },
@@ -30,11 +30,11 @@
     "faucet": "0.0.1",
     "grunt": "^0.4.5",
     "grunt-contrib-clean": "^0.6.0",
-    "grunt-eslint": "^0.6.0",
+    "grunt-eslint": "^2.1.0",
     "grunt-tape": "0.0.2",
-    "load-grunt-tasks": "^0.6.0",
-    "tape": "^2.13.4",
-    "time-grunt": "^0.4.0"
+    "load-grunt-tasks": "^1.0.0",
+    "tape": "^3.0.3",
+    "time-grunt": "^1.0.0"
   },
   "peerDependencies": {
     "grunt": "~0.4.0"
