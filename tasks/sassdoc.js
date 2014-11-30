@@ -1,4 +1,4 @@
-/*
+/**
  * grunt-sassdoc
  *
  * unlicenced
@@ -9,104 +9,50 @@
 
 var sassdoc = require('sassdoc');
 var chalk = require('chalk');
-var _ = require('lodash');
+var ensure = require('lodash').assign;
 
 module.exports = function (grunt) {
 
-  function validateSrc(filePair) {
-    return filePair.src.filter(function (filepath) {
-      if (!grunt.file.exists(filepath)) {
-        grunt.log.warn('Source file "' + chalk.cyan(filepath) + '" not found.');
-        return false;
-      }
-      else {
-        return true;
-      }
-    });
-  }
-
-  function loadJSON(path) {
-    if (!grunt.file.exists(path)) {
-      grunt.log.warn('JSON file "' + chalk.cyan(path) + '" not found.');
-      return false;
-    }
-    else {
-      return grunt.file.readJSON(path);
-    }
-  }
-
-  function handleOptions() {
-    // Defaults
+  function cfg() {
+    // Defaults.
     var options = this.options({
-      verbose: false,
-      config: null,
-      display: {
-        access: ['public', 'private'],
-        alias: false,
-        watermark: true
-      },
-      groups: {
-        'undefined': 'Ungrouped'
-      },
-      package: null,
-      theme: 'default',
-      basePath: null,
-      force: false,
-      interactive: true
+      noUpdateNotifier: true
     });
 
-    // If a config file is passed and found,
-    // its options will prevail over defauts.
-    if (options.config) {
-      var config = loadJSON(options.config);
+    // Instanciate a new SassDoc Logger.
+    var logger = new sassdoc.Logger(options.verbose);
 
-      if (config) {
-        options = _.assign(options, config);
-      }
-    }
+    // Load raw configuration.
+    var config = sassdoc.cfg.pre(options.config, logger);
 
-    // If a package path is passed try to load the file.
-    if (_.isString(options.package)) {
-      options.package = loadJSON(options.package);
-    }
-    // If options.package is not usable, delete it.
-    if (!_.isPlainObject(options.package) || _.isEmpty(options.package)) {
-      options = _.omit(options, 'package');
-    }
+    // Ensure that options take precedence over configuration values.
+    ensure(config, options);
 
-    // Enable SassDoc logger.
-    if (options.verbose) {
-      sassdoc.logger.enabled = true;
-    }
+    // Post process configuration.
+    sassdoc.cfg.post(config);
 
-    // Clean options not expected by SassDoc.
-    options = _.omit(options, ['verbose', 'config']);
-
-    return options;
+    return config;
   }
-
 
   grunt.registerMultiTask('sassdoc', 'Generates documentation', function () {
     var done = this.async();
     var target = this.target;
-    var options = handleOptions.call(this);
+    var config = cfg.call(this);
 
     function compile(filePair) {
-      var src = validateSrc(filePair);
-      var dest = filePair.dest;
+      var src = filePair.orig.src;
+      var dest = filePair.orig.dest;
 
       if (!src.length) {
         return grunt.fail.warn('No valid source provided');
       }
-
-      src = src[0];
 
       // Emit start event if anyone is listening.
       if (grunt.event.listeners('sassdoc.start').length > 0) {
         grunt.event.emit('sassdoc.start', target, src, dest);
       }
 
-      sassdoc.documentize(src, dest, options)
+      sassdoc.documentize(src, dest, config)
         .then(function () {
           grunt.log.ok('SassDoc documentation successfully generated.');
 
@@ -116,8 +62,7 @@ module.exports = function (grunt) {
           }
 
           done();
-        })
-        .catch(function (err) {
+        }, function (err) {
           grunt.log.error(err);
           grunt.fail.warn('SassDoc documentation failed.');
         });
