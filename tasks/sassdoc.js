@@ -8,7 +8,6 @@
 'use strict';
 
 var sassdoc = require('sassdoc');
-var chalk = require('chalk');
 var ensure = require('lodash').assign;
 
 module.exports = function (grunt) {
