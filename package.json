@@ -22,7 +22,7 @@
     "url": "git://github.com/SassDoc/grunt-sassdoc.git"
   },
   "dependencies": {
-    "sassdoc": "2.0.0-rc.3",
+    "sassdoc": "2.0.0-rc.6",
     "lodash": "^2.4.1"
   },
   "devDependencies": {

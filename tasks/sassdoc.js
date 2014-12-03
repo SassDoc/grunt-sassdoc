@@ -18,7 +18,7 @@ module.exports = function (grunt) {
       noUpdateNotifier: true
     });
 
-    // Instanciate a new SassDoc Logger.
+    // Instantiate a new SassDoc Logger.
     var logger = new sassdoc.Logger(options.verbose);
 
     // Load raw configuration.

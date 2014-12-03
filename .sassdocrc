@@ -1,0 +1,13 @@
+{
+  "display": {
+    "access": ["public", "private"],
+    "alias": false,
+    "watermark": false
+  },
+  "groups": {
+    "undefined": "Ungrouped"
+  },
+  "package": "package.json",
+  "theme": "default",
+  "basePath": "https://github.com/SassDoc/grunt-sassdoc/tree/master/test/fixture"
+}

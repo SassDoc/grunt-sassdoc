@@ -13,50 +13,54 @@ module.exports = function (grunt) {
   var config = {
 
     sassdoc: {
+
+      // Bare minimum.
+      bare: {
+        src: 'test/fixture/**/*.scss',
+        dest: 'test/docs'
+      },
+
+      // With config passed in as an external file.
       config: {
-        src: 'test/fixture',
+        src: ['test/fixture/**/*.scss'],
         dest: 'test/docs',
         options: {
-          verbose: true,
-          config: 'test/view.json',
-          force: true,
-          interactive: false
+          config: 'test/config.json'
         }
       },
+
+      // With config passed in as object.
       opts: {
-        src: 'test/fixture',
+        src: 'test/fixture/**/*.scss',
         dest: 'test/docs',
         options: {
+          // cli opts.
           verbose: true,
-          display: {
-            access: ['public', 'private'],
-            alias: true,
-            watermark: true
-          },
+          force: true,
+          interactive: false,
+          theme: 'default',
+          // SassDoc opts.
+          package: pkg,
+          autofill: ['requires', 'throws'],
           groups: {
             'undefined': 'Ungrouped',
             'foo': 'Foo group',
             'bar': 'Bar group'
           },
-          package: pkg,
-          theme: 'default',
-          basePath: 'https://github.com/SassDoc/grunt-sassdoc/tree/master/test/fixture',
-          force: true,
-          interactive: false
+          // theme opts.
+          display: {
+            access: ['public', 'private'],
+            alias: true,
+            watermark: true
+          },
+          basePath: 'https://github.com/SassDoc/grunt-sassdoc/tree/master/test/fixture'
         }
-      },
-      fail: {
-        src: 'should/fail',
-        dest: 'test/docs'
-      },
-      bare: {
-        src: 'test/fixture',
-        dest: 'test/docs'
       }
+
     },
 
     tape: {
-      files: ['test/*-test.js']
+      files: ['test/*.test.js']
     },
 
     clean: {
@@ -64,7 +68,7 @@ module.exports = function (grunt) {
     },
 
     eslint: {
-      target: ['tasks/*.js', 'test/*.js']
+      target: ['tasks/*.js', 'test/*.js', 'Gruntfile.js']
     }
 
   };
@@ -75,6 +79,9 @@ module.exports = function (grunt) {
 
   grunt.registerTask('test', [
     'eslint',
+    'sassdoc:bare',
+    'tape',
+    'clean:test',
     'sassdoc:config',
     'tape',
     'clean:test',

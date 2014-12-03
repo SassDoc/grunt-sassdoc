@@ -4,9 +4,7 @@
  * ---
  * @type Map
  */
-$test-var-public: (
-  key: 'val'
-);
+$test-var-public: ( key: 'val' )
 
 
 /**
@@ -16,9 +14,7 @@ $test-var-public: (
  * ---
  * @type Map
  */
-$test-var-private: (
-  key: 'val'
-);
+$test-var-private: ( key: 'val' )
 
 
 /**
@@ -29,7 +25,7 @@ $test-var-private: (
  * ---
  * @returns {*}
  */
-@function test-func-public($one, $two) {}
+@function test-func-public($one, $two)
 
 
 /**
@@ -42,7 +38,7 @@ $test-var-private: (
  * ---
  * @returns {*}
  */
-@function test-func-private($one, $two) {}
+@function test-func-private($one, $two)
 
 
 /**
@@ -55,7 +51,7 @@ $test-var-private: (
  * ---
  * @returns {*}
  */
-@function test-func-alias($one, $two) {}
+@function test-func-alias($one, $two)
 
 
 /**
@@ -64,9 +60,7 @@ $test-var-private: (
  * @param {String} $one - Param one description
  * @param {String} $two - Param two description
  */
-@mixin test-mix-public($one, $two) {
-
-}
+=test-mix-public($one, $two)
 
 
 /**
@@ -77,10 +71,7 @@ $test-var-private: (
  * @param {String} $one - Param one description
  * @param {String} $two - Param two description
  */
-@mixin test-mix-private($one, $two) {
-
-}
-
+=test-mix-private($one, $two)
 
 /**
  * Test: function private.
@@ -92,7 +83,7 @@ $test-var-private: (
  * ---
  * @returns {*}
  */
-@function test-func-private($one, $two) {}
+@function test-func-private($one, $two)
 
 
 //
@@ -105,7 +96,7 @@ $test-var-private: (
  * ---
  * @group foo
  */
-$test-var-group-foo: ();
+$test-var-group-foo: ()
 
 
 /**
@@ -113,7 +104,7 @@ $test-var-group-foo: ();
  * ---
  * @group foo
  */
-@function test-func-group-foo() {}
+@function test-func-group-foo()
 
 
 /**
@@ -121,7 +112,7 @@ $test-var-group-foo: ();
  * ---
  * @group foo
  */
-@mixin test-mix-group-foo() {}
+=test-mix-group-foo()
 
 
 /**
@@ -129,7 +120,7 @@ $test-var-group-foo: ();
  * ---
  * @group bar
  */
-$test-var-group-bar: ();
+$test-var-group-bar: ()
 
 
 /**
@@ -137,7 +128,7 @@ $test-var-group-bar: ();
  * ---
  * @group bar
  */
-@function test-func-group-bar() {}
+@function test-func-group-bar()
 
 
 /**
@@ -145,7 +136,7 @@ $test-var-group-bar: ();
  * ---
  * @group bar
  */
-@mixin test-mix-group-bar() {}
+=test-mix-group-bar()
 
 
 //
@@ -166,4 +157,4 @@ $test-var-group-bar: ();
  * ---
  * @returns {*} returns description
  */
-@function test-func-markdown($one, $two) {}
+@function test-func-markdown($one, $two)
