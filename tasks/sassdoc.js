@@ -12,7 +12,7 @@ var ensure = require('lodash').assign;
 
 module.exports = function (grunt) {
 
-  function cfg() {
+  function environment() {
     // Defaults.
     var options = this.options({
       noUpdateNotifier: true
@@ -21,22 +21,26 @@ module.exports = function (grunt) {
     // Instantiate a new SassDoc Logger.
     var logger = new sassdoc.Logger(options.verbose);
 
-    // Load raw configuration.
-    var config = sassdoc.cfg.pre(options.config, logger);
+    // Instantiate a new SassDoc Environment.
+    var env = new sassdoc.Environment(logger, options.strict);
+
+    env.on('error', grunt.log.error);
+
+    // Load and process config file, if any.
+    env.load(options.config);
 
     // Ensure that options take precedence over configuration values.
-    ensure(config, options);
+    ensure(env, options);
 
-    // Post process configuration.
-    sassdoc.cfg.post(config);
+    env.postProcess();
 
-    return config;
+    return env;
   }
 
   grunt.registerMultiTask('sassdoc', 'Generates documentation', function () {
     var done = this.async();
     var target = this.target;
-    var config = cfg.call(this);
+    var env = environment.call(this);
 
     function compile(filePair) {
       var src = filePair.orig.src;
@@ -51,7 +55,7 @@ module.exports = function (grunt) {
         grunt.event.emit('sassdoc.start', target, src, dest);
       }
 
-      sassdoc.documentize(src, dest, config)
+      sassdoc.documentize(src, dest, env)
         .then(function () {
           grunt.log.ok('SassDoc documentation successfully generated.');
 
