@@ -28,8 +28,8 @@
     "UNLICENSE"
   ],
   "dependencies": {
-    "sassdoc": "2.0.0-rc.8",
-    "lodash": "^2.4.1"
+    "lodash.assign": "^2.4.1",
+    "sassdoc": "2.0.0-rc.9"
   },
   "devDependencies": {
     "faucet": "0.0.1",
