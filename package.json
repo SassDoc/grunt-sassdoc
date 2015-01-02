@@ -21,6 +21,12 @@
     "type": "git",
     "url": "git://github.com/SassDoc/grunt-sassdoc.git"
   },
+  "files": [
+    "tasks",
+    "CHANGELOG.md",
+    "README.md",
+    "UNLICENSE"
+  ],
   "dependencies": {
     "sassdoc": "^1.2.0",
     "chalk": "^0.5.0",
