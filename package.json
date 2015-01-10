@@ -29,15 +29,15 @@
   ],
   "dependencies": {
     "lodash.assign": "^2.4.1",
-    "sassdoc": "2.0.0-rc.11"
+    "sassdoc": "2.0.0-rc.12"
   },
   "devDependencies": {
     "faucet": "0.0.1",
     "grunt": "^0.4.5",
     "grunt-contrib-clean": "^0.6.0",
-    "grunt-eslint": "^2.1.0",
+    "grunt-eslint": "^3.0.0",
     "grunt-tape": "0.0.2",
-    "load-grunt-tasks": "^1.0.0",
+    "load-grunt-tasks": "^2.0.0",
     "tape": "^3.0.3",
     "time-grunt": "^1.0.0"
   },

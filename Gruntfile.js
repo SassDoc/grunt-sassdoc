@@ -19,6 +19,11 @@ module.exports = function (grunt) {
         src: 'test/fixture/**/*.scss'
       },
 
+      // Glob patterns Array.
+      srcs: {
+        src: ['test/fixture/scss-one/**/*.scss', 'test/fixture/scss-two/**/*.scss']
+      },
+
       // With config passed in as an external file.
       config: {
         src: ['test/fixture/**/*.scss'],
@@ -75,6 +80,9 @@ module.exports = function (grunt) {
   grunt.registerTask('test', [
     'eslint',
     'sassdoc:bare',
+    'tape',
+    'clean:test',
+    'sassdoc:srcs',
     'tape',
     'clean:test',
     'sassdoc:config',
