@@ -29,7 +29,7 @@
   ],
   "dependencies": {
     "lodash.assign": "^2.4.1",
-    "sassdoc": "2.0.0-rc.9"
+    "sassdoc": "2.0.0-rc.11"
   },
   "devDependencies": {
     "faucet": "0.0.1",

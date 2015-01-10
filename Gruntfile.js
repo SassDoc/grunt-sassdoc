@@ -16,14 +16,12 @@ module.exports = function (grunt) {
 
       // Bare minimum.
       bare: {
-        src: 'test/fixture/**/*.scss',
-        dest: 'test/docs'
+        src: 'test/fixture/**/*.scss'
       },
 
       // With config passed in as an external file.
       config: {
         src: ['test/fixture/**/*.scss'],
-        dest: 'test/docs',
         options: {
           config: 'test/config.json'
         }
@@ -32,12 +30,9 @@ module.exports = function (grunt) {
       // With config passed in as object.
       opts: {
         src: 'test/fixture/**/*.scss',
-        dest: 'test/docs',
         options: {
           // cli opts.
           verbose: true,
-          force: true,
-          interactive: false,
           theme: 'default',
           // SassDoc opts.
           package: pkg,
@@ -64,7 +59,7 @@ module.exports = function (grunt) {
     },
 
     clean: {
-      test: ['test/docs']
+      test: ['sassdoc']
     },
 
     eslint: {

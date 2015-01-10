@@ -15,9 +15,7 @@ module.exports = function (grunt) {
   function environment() {
     // Defaults.
     var options = this.options({
-      noUpdateNotifier: true,
-      force: true,
-      interactive: false
+      noUpdateNotifier: true
     });
 
     // Instantiate a new SassDoc Logger.
@@ -46,7 +44,6 @@ module.exports = function (grunt) {
 
     function compile(filePair) {
       var src = filePair.orig.src;
-      var dest = filePair.orig.dest;
 
       if (!src.length) {
         return grunt.fail.warn('No valid source provided');
@@ -54,20 +51,21 @@ module.exports = function (grunt) {
 
       // Emit start event if anyone is listening.
       if (grunt.event.listeners('sassdoc.start').length > 0) {
-        grunt.event.emit('sassdoc.start', target, src, dest);
+        grunt.event.emit('sassdoc.start', target, src);
       }
 
-      sassdoc.documentize(src, dest, env)
+      sassdoc(src, env)
         .then(function () {
           grunt.log.ok('SassDoc documentation successfully generated.');
 
           // Emit done event if anyone is listening.
           if (grunt.event.listeners('sassdoc.done').length > 0) {
-            grunt.event.emit('sassdoc.done', target, src, dest);
+            grunt.event.emit('sassdoc.done', target, src);
           }
 
           done();
-        }, function (err) {
+        })
+        .catch(function (err) {
           grunt.log.error(err);
           grunt.fail.warn('SassDoc documentation failed.');
         });

@@ -7,17 +7,17 @@ test('sassdoc', function (assert) {
   assert.plan(3);
 
   assert.ok(
-    fs.existsSync('test/docs'),
+    fs.existsSync('sassdoc'),
     'Should create a `docs` dir'
   );
 
   assert.ok(
-    fs.existsSync('test/docs/index.html'),
+    fs.existsSync('sassdoc/index.html'),
     'Should create SassDocs index'
   );
 
   assert.ok(
-    fs.existsSync('test/docs/assets'),
+    fs.existsSync('sassdoc/assets'),
     'Should dump SassDocs assets'
   );
 
