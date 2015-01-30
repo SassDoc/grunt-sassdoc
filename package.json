@@ -1,7 +1,7 @@
 {
   "name": "grunt-sassdoc",
   "title": "grunt-sassdoc",
-  "version": "2.0.0-rc.8",
+  "version": "2.0.0",
   "description": "SassDoc grunt task",
   "keywords": [
     "gruntplugin",
@@ -29,7 +29,7 @@
   ],
   "dependencies": {
     "lodash.assign": "^2.4.1",
-    "sassdoc": "beta"
+    "sassdoc": "^2.0.0"
   },
   "devDependencies": {
     "faucet": "0.0.1",
