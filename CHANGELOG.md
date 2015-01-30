@@ -1,5 +1,15 @@
 # grunt-sassdoc changelog
 
+## 2.0.0
+(2015-01-30)
+
+* Follow SassDoc 2.0.0 release.
+
+## 1.2.0
+(2015-01-02)
+
+* Disable destination safe-wiping by default.
+
 ## 1.1.0
 (2014-10-27)
 
