@@ -47,10 +47,7 @@
   "engines": {
     "node": ">=0.10.0"
   },
-  "license": {
-    "type": "unlicence",
-    "url": "http://unlicense.org"
-  },
+  "license": "Unlicense",
   "scripts": {
     "rebuild": "rm -rf node_modules && npm install",
     "test": "grunt test"
