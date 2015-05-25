@@ -1,23 +1,24 @@
 'use strict';
 
 var fs = require('fs');
+var path = require('path');
 var test = require('tape');
 
 test('sassdoc', function (assert) {
   assert.plan(3);
 
   assert.ok(
-    fs.existsSync('sassdoc'),
-    'Should create a `docs` dir'
+    fs.existsSync(path.resolve(__dirname, 'sassdoc')),
+    'Should create a `sassdoc` dir'
   );
 
   assert.ok(
-    fs.existsSync('sassdoc/index.html'),
+    fs.existsSync(path.resolve(__dirname, 'sassdoc/index.html')),
     'Should create SassDocs index'
   );
 
   assert.ok(
-    fs.existsSync('sassdoc/assets'),
+    fs.existsSync(path.resolve(__dirname, 'sassdoc/assets')),
     'Should dump SassDocs assets'
   );
 
