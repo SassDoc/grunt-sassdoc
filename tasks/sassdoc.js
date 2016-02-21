@@ -15,7 +15,7 @@ module.exports = function (grunt) {
   function environment() {
     // Defaults.
     var options = this.options({
-      noUpdateNotifier: true
+      noUpdateNotifier: true,
     });
 
     // Instantiate a new SassDoc Logger.

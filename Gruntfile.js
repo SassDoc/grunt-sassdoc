@@ -16,20 +16,20 @@ module.exports = function (grunt) {
 
       // Bare minimum.
       bare: {
-        src: 'test/fixture/**/*.scss'
+        src: 'test/fixture/**/*.scss',
       },
 
       // Glob patterns Array.
       srcs: {
-        src: ['test/fixture/scss-one/**/*.scss', 'test/fixture/scss-two/**/*.scss']
+        src: ['test/fixture/scss-one/**/*.scss', 'test/fixture/scss-two/**/*.scss'],
       },
 
       // With config passed in as an external file.
       config: {
         src: ['test/fixture/**/*.scss'],
         options: {
-          config: 'test/config.json'
-        }
+          config: 'test/config.json',
+        },
       },
 
       // With config passed in as object.
@@ -45,31 +45,31 @@ module.exports = function (grunt) {
           groups: {
             'undefined': 'Ungrouped',
             'foo': 'Foo group',
-            'bar': 'Bar group'
+            'bar': 'Bar group',
           },
           // theme opts.
           display: {
             access: ['public', 'private'],
             alias: true,
-            watermark: true
+            watermark: true,
           },
-          basePath: 'https://github.com/SassDoc/grunt-sassdoc/tree/master/test/fixture'
-        }
-      }
+          basePath: 'https://github.com/SassDoc/grunt-sassdoc/tree/master/test/fixture',
+        },
+      },
 
     },
 
     tape: {
-      files: ['test/*.test.js']
+      files: ['test/*.test.js'],
     },
 
     clean: {
-      test: ['sassdoc']
+      test: ['sassdoc'],
     },
 
     eslint: {
-      target: ['tasks/*.js', 'test/*.js', 'Gruntfile.js']
-    }
+      target: ['tasks/*.js', 'test/*.js', 'Gruntfile.js'],
+    },
 
   };
 
@@ -90,7 +90,7 @@ module.exports = function (grunt) {
     'clean:test',
     'sassdoc:opts',
     'tape',
-    'clean:test'
+    'clean:test',
   ]);
 
 

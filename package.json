@@ -49,6 +49,7 @@
   "license": "Unlicense",
   "scripts": {
     "rebuild": "rm -rf node_modules && npm install",
+    "lint": "eslint Gruntfile.js tasks test/*.test.js",
     "test": "grunt test"
   }
 }
