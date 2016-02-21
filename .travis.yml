@@ -9,9 +9,6 @@ node_js:
 before_install:
   - npm i npm@latest -g
 
-before_script:
-  - npm install -g grunt-cli
-
 git:
   depth: 10
 
