@@ -1,12 +1,18 @@
 language: node_js
 
 node_js:
-  - "0.10"
+  - '0.10'
+  - '0.12'
+  - '4.2'
+  - 'stable'
 
 before_install:
-  - npm install -g npm
+  - npm i npm@latest -g
 
 before_script:
   - npm install -g grunt-cli
-  
+
+git:
+  depth: 10
+
 sudo: false
