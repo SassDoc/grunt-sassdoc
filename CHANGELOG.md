@@ -1,5 +1,14 @@
 # grunt-sassdoc changelog
 
+## 2.0.2
+(2016-02-21)
+
+* Updated peerDependencies for upcoming Grunt 1.0.
+* Updated several dependencies.
+* Updated unit tests.
+* Updated linting.
+* Updated Travis config.
+
 ## 2.0.0
 (2015-01-30)
 
