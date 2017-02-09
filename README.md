@@ -1,5 +1,7 @@
 # grunt-sassdoc [![npm version](http://img.shields.io/npm/v/grunt-sassdoc.svg?style=flat)](https://www.npmjs.org/package/grunt-sassdoc) [![Build Status: Linux](http://img.shields.io/travis/SassDoc/grunt-sassdoc.svg?style=flat)](https://travis-ci.org/SassDoc/grunt-sassdoc?branch=master)
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/SassDoc/grunt-sassdoc.svg)](https://greenkeeper.io/)
+
 > [SassDoc](https://github.com/SassDoc/sassdoc) Grunt task.
 
 
