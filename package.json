@@ -33,9 +33,8 @@
   },
   "devDependencies": {
     "grunt": "^0.4.5",
-    "grunt-cli": "^0.1.13",
     "grunt-contrib-clean": "^1.0.0",
-    "grunt-eslint": "^18.0.0",
+    "grunt-standard": "^2.0.0",
     "grunt-tape": "0.0.2",
     "load-grunt-tasks": "^3.4.0",
     "time-grunt": "^1.0.0"
@@ -49,7 +48,6 @@
   "license": "Unlicense",
   "scripts": {
     "rebuild": "rm -rf node_modules && npm install",
-    "lint": "eslint Gruntfile.js tasks test/*.test.js",
     "test": "grunt test"
   }
 }
