@@ -1,14 +1,13 @@
-'use strict';
+'use strict'
 
 module.exports = function (grunt) {
-
   // Load all grunt tasks matching the `grunt-*` pattern.
-  require('load-grunt-tasks')(grunt);
+  require('load-grunt-tasks')(grunt)
 
   // Time how long tasks take.
-  require('time-grunt')(grunt);
+  require('time-grunt')(grunt)
 
-  var pkg = grunt.file.readJSON('package.json');
+  var pkg = grunt.file.readJSON('package.json')
 
   var config = {
 
@@ -16,20 +15,20 @@ module.exports = function (grunt) {
 
       // Bare minimum.
       bare: {
-        src: 'test/fixture/**/*.scss',
+        src: 'test/fixture/**/*.scss'
       },
 
       // Glob patterns Array.
       srcs: {
-        src: ['test/fixture/scss-one/**/*.scss', 'test/fixture/scss-two/**/*.scss'],
+        src: ['test/fixture/scss-one/**/*.scss', 'test/fixture/scss-two/**/*.scss']
       },
 
       // With config passed in as an external file.
       config: {
         src: ['test/fixture/**/*.scss'],
         options: {
-          config: 'test/config.json',
-        },
+          config: 'test/config.json'
+        }
       },
 
       // With config passed in as object.
@@ -45,40 +44,38 @@ module.exports = function (grunt) {
           groups: {
             'undefined': 'Ungrouped',
             'foo': 'Foo group',
-            'bar': 'Bar group',
+            'bar': 'Bar group'
           },
           // theme opts.
           display: {
             access: ['public', 'private'],
             alias: true,
-            watermark: true,
+            watermark: true
           },
-          basePath: 'https://github.com/SassDoc/grunt-sassdoc/tree/master/test/fixture',
-        },
-      },
-
+          basePath: 'https://github.com/SassDoc/grunt-sassdoc/tree/master/test/fixture'
+        }
+      }
     },
 
     tape: {
-      files: ['test/*.test.js'],
+      files: ['test/*.test.js']
     },
 
     clean: {
-      test: ['sassdoc'],
+      test: ['sassdoc']
     },
 
-    eslint: {
-      target: ['tasks/*.js', 'test/*.js', 'Gruntfile.js'],
-    },
+    standard: {
+      target: ['tasks/*.js', 'test/*.js', 'Gruntfile.js']
+    }
+  }
 
-  };
+  grunt.initConfig(config)
 
-  grunt.initConfig(config);
-
-  grunt.loadTasks('tasks');
+  grunt.loadTasks('tasks')
 
   grunt.registerTask('test', [
-    'eslint',
+    'standard',
     'sassdoc:bare',
     'tape',
     'clean:test',
@@ -90,17 +87,15 @@ module.exports = function (grunt) {
     'clean:test',
     'sassdoc:opts',
     'tape',
-    'clean:test',
-  ]);
-
+    'clean:test'
+  ])
 
   // // Examples using start and done events.
   // grunt.event.on('sassdoc.start', function (target, src, dest) {
-  //   grunt.log.writeln(target + ': compiling ' + src + ' to ' + dest);
-  // });
+  //   grunt.log.writeln(target + ': compiling ' + src + ' to ' + dest)
+  // })
   //
   // grunt.event.on('sassdoc.done', function (target, src, dest) {
-  //   grunt.log.writeln(target + ': ' + src + ' compiled to ' + dest);
-  // });
-
-};
+  //   grunt.log.writeln(target + ': ' + src + ' compiled to ' + dest)
+  // })
+}
