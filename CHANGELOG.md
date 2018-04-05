@@ -1,5 +1,10 @@
 # grunt-sassdoc changelog
 
+## 2.0.3
+(2018-04-05)
+* Upgrade SassDoc dependency.
+  Push lock files to upgrade  their dependency graph and fix a security issue with marked.
+
 ## 2.0.2
 (2016-02-21)
 
